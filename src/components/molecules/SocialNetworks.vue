@@ -1,12 +1,12 @@
 <template>
   <div class="social-networks">
-    <social-link name="Github" to="https://www.github.com/" icon="github.svg" />
-    <social-link
+    <SocialLink name="Github" to="https://www.github.com/" icon="github.svg" />
+    <SocialLink
       name="Twitter"
       to="https://www.twitter.com/"
       icon="twitter.svg"
     />
-    <social-link
+    <SocialLink
       name="Facebook"
       to="https://www.facebook.com/"
       icon="facebook.svg"

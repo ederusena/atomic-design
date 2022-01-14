@@ -1,6 +1,7 @@
 <template>
   <div class="component">
-    <Header />
+    <HomeTemplate />
+
     <h4>StartDayJs - {{ startDateDayjs }}</h4>
     <h4>EndDayJs - {{ endDateDayjs }}</h4>
   </div>
@@ -8,13 +9,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Header } from "@/components/organisms";
-
+import { HomeTemplate } from "@/components/templates";
 import dayjs from "dayjs";
 
 export default defineComponent({
   components: {
-    Header,
+    HomeTemplate,
   },
   setup() {
     return {
@@ -24,9 +24,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.component {
-  margin: 1rem;
-}
-</style>
