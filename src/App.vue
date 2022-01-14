@@ -1,38 +1,32 @@
 <template>
   <div class="component">
-    <logo />
-    <nav-bar />
-    <search-form />
-    <social-networks />
-    <service title="Front End" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eius hic dolores ratione rem ipsam quisquam asperiores, architecto quasi perspiciatis quos porro esse? Vero quasi dignissimos consequatur id saepe sit?" />
-    <service title="Back End" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eius hic dolores ratione rem ipsam quisquam asperiores, architecto quasi perspiciatis quos porro esse? Vero quasi dignissimos consequatur id saepe sit?" />
-    <service title="Web Development" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eius hic dolores ratione rem ipsam quisquam asperiores, architecto quasi perspiciatis quos porro esse? Vero quasi dignissimos consequatur id saepe sit?" />
+    <Header />
+    <h4>StartDayJs - {{ startDateDayjs }}</h4>
+    <h4>EndDayJs - {{ endDateDayjs }}</h4>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import {
-  NavBar,
-  SearchForm,
-  SocialNetworks,
-  Service,
-} from "@/components/molecules";
-import { Logo } from "@/components/atoms";
+import { Header } from "@/components/organisms";
+
+import dayjs from "dayjs";
 
 export default defineComponent({
   components: {
-    Logo,
-    NavBar,
-    Service,
-    SearchForm,
-    SocialNetworks,
+    Header,
+  },
+  setup() {
+    return {
+      startDateDayjs: dayjs().subtract(3, "months").format("YYYY-MM-DD"),
+      endDateDayjs: dayjs().add(1, "days").format("YYYY-MM-DD"),
+    };
   },
 });
 </script>
 
 <style lang="scss" scoped>
 .component {
-  width: 300px;
+  margin: 1rem;
 }
 </style>
